@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DBTableStructure.Properties {
+namespace DataBaseDocumentionBuilder.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DBTableStructure.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DBTableStructure.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DataBaseDocumentionBuilder.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -91,11 +91,10 @@ namespace DBTableStructure.Properties {
         ///                xmlns:msxsl=&quot;urn:schemas-microsoft-com:xslt&quot; exclude-result-prefixes=&quot;msxsl&quot;&gt;
         ///    &lt;xsl:template match=&quot;DocumentElement&quot;&gt;
         ///        &lt;html xmlns:mshelp=&quot;http://msdn.microsoft.com/mshelp&quot;&gt;
-        ///        &lt;head&gt;
+        ///        &lt;head&gt;     
         ///            &lt;title&gt;Database&lt;/title&gt;
         ///              &lt;link rel=&quot;stylesheet&quot; href=&quot;Content/bootstrap.min.css&quot;&gt;&lt;/link&gt;
-        ///  &lt;script src=&quot;Scripts/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///  &lt;script src=&quot;Scripts/jquery-1.9.1.min.js&quot;&gt;&lt;/scrip [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string template {
             get {

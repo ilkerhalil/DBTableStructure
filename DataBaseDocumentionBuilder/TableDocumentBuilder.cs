@@ -8,10 +8,11 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
 using Dapper;
-using DBTableStructure.Model;
-using DBTableStructure.Properties;
+using DataBaseDocumentionBuilder.Model;
+using DataBaseDocumentionBuilder.Properties;
+using DBTableStructure;
 
-namespace DBTableStructure
+namespace DataBaseDocumentionBuilder
 {
     public class TableDocumentBuilder : ITableDocumentBuilder, IDisposable
     {
