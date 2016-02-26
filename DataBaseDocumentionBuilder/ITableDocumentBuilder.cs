@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DBTableStructure.Model;
+using DataBaseDocumentionBuilder.Model;
 
 namespace DBTableStructure
 {
