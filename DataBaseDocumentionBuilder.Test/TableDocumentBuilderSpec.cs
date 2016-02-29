@@ -20,7 +20,7 @@ namespace DataBaseDocumentionBuilder.Test
 
         [Fact]
         public void CreateTableDocument()
-        { 
+        {  
             var html = _tableDocumentBuilder.CreateTableDocument("ACCNT_GRPV", "BASE_UOM");
             Assert.NotEqual(string.Empty, html);
          }
