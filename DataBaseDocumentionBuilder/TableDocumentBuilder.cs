@@ -86,12 +86,9 @@ namespace DataBaseDocumentionBuilder
 
         private void Dispose(bool v)
         {
-            if (v)
-            {
-                _sqlConnection.Dispose();
-                _sqlConnection = null;
-            }
-
+            if (!v) return;
+            _sqlConnection.Dispose();
+            _sqlConnection = null;
         }
 
         #endregion

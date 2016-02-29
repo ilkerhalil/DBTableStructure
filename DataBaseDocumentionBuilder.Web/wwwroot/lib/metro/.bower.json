@@ -45,7 +45,6 @@
     "commit": "8a9fabdb7171556c730d9b139bed0f52ed3fab8d"
   },
   "_source": "git://github.com/olton/Metro-UI-CSS.git",
-  "_target": "^3.0.14",
-  "_originalSource": "metro",
-  "_direct": true
+  "_target": "~3.0.14",
+  "_originalSource": "metro"
 }

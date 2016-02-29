@@ -2,7 +2,7 @@
   "name": "ASP.NET",
   "private": true,
   "dependencies": {
-    "metro": "^3.0.14",
-    "datatables.net": "^1.10.11"
+    "metro": "~3.0.14",
+    "datatables.net": "~1.10.11"
   }
 }
