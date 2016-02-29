@@ -41,7 +41,6 @@
     "commit": "a656b80e48de139c44587e9082dee3962a0a5750"
   },
   "_source": "git://github.com/DataTables/Dist-DataTables.git",
-  "_target": "^1.10.11",
-  "_originalSource": "datatables.net",
-  "_direct": true
+  "_target": "~1.10.11",
+  "_originalSource": "datatables.net"
 }

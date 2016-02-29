@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
@@ -39,14 +34,15 @@ namespace DataBaseDocumentionBuilder.Web
                 opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
             services.AddLogging();
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder applicationBuilder)
         {
-            applicationBuilder.UseStaticFiles();
             applicationBuilder.UseIISPlatformHandler();
+            applicationBuilder.UseStaticFiles();
+
             applicationBuilder.UseMvc(routeBuilder =>
             {
                 routeBuilder.MapRoute(
