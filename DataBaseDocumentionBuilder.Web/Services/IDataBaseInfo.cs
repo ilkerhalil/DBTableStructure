@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DataBaseDocumentionBuilder.Web.Models;
 
 namespace DataBaseDocumentionBuilder.Web.Services
 {

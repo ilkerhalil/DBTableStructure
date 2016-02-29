@@ -9,6 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ui", "Ui", "{DA54B365-E03A-
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DataBaseDocumentionBuilder.Web", "DataBaseDocumentionBuilder.Web\DataBaseDocumentionBuilder.Web.xproj", "{7D8A4B32-6FF2-4F35-9C44-1EDC2CBEF024}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseDocumentionBuilder.Test", "DataBaseDocumentionBuilder.Test\DataBaseDocumentionBuilder.Test.csproj", "{8B2B42CC-A964-4453-9829-910D12655172}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D785078-9CD5-47A5-B524-5457F1BB171C}"
+	ProjectSection(SolutionItems) = preProject
+		XMLFile1.xml = XMLFile1.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +30,10 @@ Global
 		{7D8A4B32-6FF2-4F35-9C44-1EDC2CBEF024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D8A4B32-6FF2-4F35-9C44-1EDC2CBEF024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D8A4B32-6FF2-4F35-9C44-1EDC2CBEF024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2B42CC-A964-4453-9829-910D12655172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2B42CC-A964-4453-9829-910D12655172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2B42CC-A964-4453-9829-910D12655172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2B42CC-A964-4453-9829-910D12655172}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

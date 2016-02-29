@@ -28,13 +28,13 @@ namespace DataBaseDocumentionBuilder
         /// Xml oluştur.
         /// </summary>
         /// <returns></returns>
-        private string CreateSchemaXml()
+        private string CreateSchemaXml(IList<Table> tables)
         {
             var stringBuilder = new StringBuilder();
             using (var stringWriter = new StringWriter(stringBuilder))
             {
-                var xmlSerializer = new XmlSerializer(typeof(Table));
-                xmlSerializer.Serialize(stringWriter, Tables);
+                var xmlSerializer = new XmlSerializer(typeof(List<Table>));
+                xmlSerializer.Serialize(stringWriter, tables);
             }
             return stringBuilder.ToString();
         }
@@ -46,7 +46,10 @@ namespace DataBaseDocumentionBuilder
                 var tables = _sqlConnection.Query<Table>(Resources.TableListQuery).ToArray();
                 foreach (var table in tables)
                 {
-                    var tableDetail = _sqlConnection.Query<TableDetail>(Resources.GetTableQuery);
+                    var tableDetail = _sqlConnection.Query<TableDetail>(Resources.GetTableQuery, new
+                    {
+                        @tableName = table.TableName
+                    });
                     table.TableDetails.AddRange(tableDetail);
                 }
                 return tables;
@@ -55,7 +58,7 @@ namespace DataBaseDocumentionBuilder
 
         public string CreateTableDocument(params string[] tableNames)
         {
-            var xmlSchema = CreateSchemaXml();
+            var xmlSchema = CreateSchemaXml(Tables.Where(w => tableNames.Contains(w.TableName)).ToList());
             var xslCompiler = new XslCompiledTransform();
             using (var xmlReader = new XmlTextReader(new StringReader(Resources.template)))
             {
