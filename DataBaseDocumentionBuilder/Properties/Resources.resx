@@ -150,12 +150,12 @@
 			                            PK.type='PK' 
 	                            ) AS PK ON PK.parent_object_id = C.object_id AND PK.column_id = C.column_id
 	                            LEFT JOIN sys.tables T ON T.object_id = C.object_id
-                            WHERE T.type = 'U' 
-							--and t.name in('ZZOUTLT','ZZMSAYA')
+                            WHERE T.type = 'U'
+							and t.name in(@tableName)
                             ORDER BY C.column_id</value>
   </data>
   <data name="TableListQuery" xml:space="preserve">
-    <value>select t.name as TableName from sys.tables t order by t.name</value>
+    <value>select t.name as TableName from sys.tables t where t.type ='U' order by t.name</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="template" type="System.Resources.ResXFileRef, System.Windows.Forms">

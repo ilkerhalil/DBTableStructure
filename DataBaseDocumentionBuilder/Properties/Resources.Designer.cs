@@ -77,7 +77,7 @@ namespace DataBaseDocumentionBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to select t.name as TableName from sys.tables t order by t.name.
+        ///   Looks up a localized string similar to select t.name as TableName from sys.tables t where t.type =&apos;U&apos; order by t.name.
         /// </summary>
         internal static string TableListQuery {
             get {
