@@ -20,7 +20,7 @@
                   <xsl:value-of select="TableName/text()" />
                 </div>
               </div>
-
+  
               <div>
                 <table class="table table-responsive table-bordered table-hover table-striped">
                   <thead>
