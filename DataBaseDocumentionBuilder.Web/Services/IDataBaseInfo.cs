@@ -3,7 +3,7 @@ using DataBaseDocumentionBuilder.Web.Models;
 
 namespace DataBaseDocumentionBuilder.Web.Services
 {
-    public interface IDataBaseInfoService
+    public interface IDataBaseInfo
     {
         void AddDatabase(string connectionString);
 

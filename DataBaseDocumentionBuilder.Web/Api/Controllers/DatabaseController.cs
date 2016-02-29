@@ -10,7 +10,7 @@ namespace DataBaseDocumentionBuilder.Web.Api.Controllers
     public class DatabaseController : Controller
     {
 
-        public DatabaseController(IDataBaseInfoService dataBaseInfoService)
+        public DatabaseController(IDataBaseInfo dataBaseInfoService)
         {
 
         }
