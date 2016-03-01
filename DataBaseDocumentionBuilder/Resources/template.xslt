@@ -1,7 +1,7 @@
 ﻿<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                
                 xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
-  <xsl:output method="html" omit-xml-declaration="yes" indent="no"/>
+  <mahmut></mahmut>
+  
   <xsl:template match="ArrayOfTable">
 
     <!--<html xmlns:mshelp="http://msdn.microsoft.com/mshelp">
