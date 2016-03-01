@@ -86,19 +86,40 @@ namespace DataBaseDocumentionBuilder.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-        ///&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+        ///   Looks up a localized string similar to &lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+        ///                
         ///                xmlns:msxsl=&quot;urn:schemas-microsoft-com:xslt&quot; exclude-result-prefixes=&quot;msxsl&quot;&gt;
-        ///    &lt;xsl:template match=&quot;DocumentElement&quot;&gt;
-        ///        &lt;html xmlns:mshelp=&quot;http://msdn.microsoft.com/mshelp&quot;&gt;
-        ///        &lt;head&gt;     
-        ///            &lt;title&gt;Database&lt;/title&gt;
-        ///              &lt;link rel=&quot;stylesheet&quot; href=&quot;Content/bootstrap.min.css&quot;&gt;&lt;/link&gt;
-        ///  &lt;script src=&quot;Scripts/jquery-1.9.1.min.js&quot;&gt;&lt;/scrip [rest of string was truncated]&quot;;.
+        ///  &lt;xsl:output method=&quot;html&quot; omit-xml-declaration=&quot;yes&quot; indent=&quot;no&quot;/&gt;
+        ///  &lt;xsl:template match=&quot;ArrayOfTable&quot;&gt;
+        ///
+        ///    &lt;!--&lt;html xmlns:mshelp=&quot;http://msdn.microsoft.com/mshelp&quot;&gt;
+        ///      &lt;head&gt;
+        ///        &lt;title&gt;Database&lt;/title&gt;
+        ///        &lt;link rel=&quot;stylesheet&quot; href=&quot;Content/bootstrap.min.css&quot;&gt;&lt;/link&gt;
+        ///        &lt;script src=&quot;Scr [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string template {
             get {
                 return ResourceManager.GetString("template", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+        ///                
+        ///                xmlns:msxsl=&quot;urn:schemas-microsoft-com:xslt&quot; exclude-result-prefixes=&quot;msxsl&quot;&gt;
+        ///  &lt;xsl:output method=&quot;html&quot; omit-xml-declaration=&quot;yes&quot; indent=&quot;no&quot;/&gt;
+        ///  &lt;xsl:template match=&quot;ArrayOfTable&quot;&gt;
+        ///
+        ///    &lt;!--&lt;html xmlns:mshelp=&quot;http://msdn.microsoft.com/mshelp&quot;&gt;
+        ///      &lt;head&gt;
+        ///        &lt;title&gt;Database&lt;/title&gt;
+        ///        &lt;link rel=&quot;stylesheet&quot; href=&quot;Content/bootstrap.min.css&quot;&gt;&lt;/link&gt;
+        ///        &lt;script src=&quot;Scr [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Xslt {
+            get {
+                return ResourceManager.GetString("Xslt", resourceCulture);
             }
         }
     }

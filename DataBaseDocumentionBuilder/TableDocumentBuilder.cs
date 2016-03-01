@@ -60,10 +60,12 @@ namespace DataBaseDocumentionBuilder
         {
             var xmlSchema = CreateSchemaXml(Tables.Where(w => tableNames.Contains(w.TableName)).ToList());
             var xslCompiler = new XslCompiledTransform();
-            using (var xmlReader = new XmlTextReader(new StringReader(Resources.template)))
+            
+            using (var xmlReader = new XmlTextReader(new StringReader(Resources.Xslt)))
             {
                 xslCompiler.Load(xmlReader);
             }
+            
             var xmlDocument = new XmlDocument();
             xmlDocument.Load(new StringReader(xmlSchema));
             var xmlStringBuilder = new StringBuilder();
