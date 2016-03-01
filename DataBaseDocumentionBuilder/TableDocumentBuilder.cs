@@ -69,7 +69,9 @@ namespace DataBaseDocumentionBuilder
             var xmlDocument = new XmlDocument();
             xmlDocument.Load(new StringReader(xmlSchema));
             var xmlStringBuilder = new StringBuilder();
-            using (var xmlWriter = XmlWriter.Create(xmlStringBuilder))
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
+            xmlWriterSettings.OmitXmlDeclaration = true;
+            using (var xmlWriter = XmlWriter.Create(xmlStringBuilder, xmlWriterSettings))
             {
                 xslCompiler.Transform(xmlDocument, xmlWriter);
             }
