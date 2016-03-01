@@ -161,4 +161,154 @@
   <data name="template" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\template.xslt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Xslt" xml:space="preserve">
+    <value>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                
+                xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"&gt;
+  &lt;xsl:output method="html" omit-xml-declaration="yes" indent="no"/&gt;
+  &lt;xsl:template match="ArrayOfTable"&gt;
+
+    &lt;!--&lt;html xmlns:mshelp="http://msdn.microsoft.com/mshelp"&gt;
+      &lt;head&gt;
+        &lt;title&gt;Database&lt;/title&gt;
+        &lt;link rel="stylesheet" href="Content/bootstrap.min.css"&gt;&lt;/link&gt;
+        &lt;script src="Scripts/jquery-1.9.1.min.js"&gt;&lt;/script&gt;
+        &lt;script src="Scripts/bootstrap.min.js"&gt;&lt;/script&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+
+        
+      &lt;/body&gt;
+    &lt;/html&gt;--&gt;
+    &lt;div class="container"&gt;
+      &lt;xsl:for-each select="Table"&gt;
+        &lt;div class="panel panel-default table-responsive"&gt;
+          &lt;!-- Default panel contents --&gt;
+          &lt;div class="panel-heading text-center"&gt;
+            &lt;xsl:value-of select="TableName/text()" /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;table class="table table-responsive table-bordered table-hover table-striped"&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Field Name&lt;/td&gt;
+                &lt;td&gt;Type&lt;/td&gt;
+                &lt;td&gt;Length&lt;/td&gt;
+                &lt;td&gt;Description&lt;/td&gt;
+                &lt;td&gt;Is Nullable&lt;/td&gt;
+                &lt;td&gt;Is Identity&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+
+              &lt;xsl:for-each select="TableDetails"&gt;
+                &lt;xsl:for-each select="TableDetail"&gt;
+                  &lt;tr&gt;
+                    &lt;td&gt;
+                      &lt;xsl:value-of select="ColumnName/text()" /&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                      &lt;xsl:value-of select="ColumnType/text()" /&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                      &lt;xsl:value-of select="ColumnLength/text()" /&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                      &lt;xsl:value-of select="Description/text()" /&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                      &lt;xsl:value-of select="IsNullable/text()" /&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                      &lt;xsl:value-of select="IsIdentity/text()" /&gt;
+                    &lt;/td&gt;
+                  &lt;/tr&gt;
+                &lt;/xsl:for-each&gt;
+              &lt;/xsl:for-each&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+
+      &lt;/xsl:for-each&gt;
+    &lt;/div&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+
+
+&lt;!--
+&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+             xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl"&gt;
+  &lt;xsl:template match="DocumentElement"&gt;
+    &lt;html xmlns:mshelp="http://msdn.microsoft.com/mshelp"&gt;
+      &lt;head&gt;
+        &lt;title&gt;Database&lt;/title&gt;
+        &lt;link rel="stylesheet" href="Content/bootstrap.min.css"&gt;&lt;/link&gt;
+        &lt;script src="Scripts/jquery-1.9.1.min.js"&gt;&lt;/script&gt;
+        &lt;script src="Scripts/bootstrap.min.js"&gt;&lt;/script&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+
+        &lt;div class="container"&gt;
+          &lt;xsl:for-each select="Object"&gt;
+            &lt;xsl:if test="not(preceding-sibling::table_name/text() = table_name/text())"&gt;
+              &lt;xsl:variable name="table" select="table_name/text()" /&gt;
+
+              &lt;div class="panel panel-default table-responsive"&gt;
+                &lt;div class="panel-heading text-center"&gt;
+                  &lt;xsl:value-of select="table_name/text()" /&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;div&gt;
+                &lt;table class="table table-responsive table-bordered table-hover table-striped"&gt;
+                  &lt;thead&gt;
+                    &lt;tr&gt;
+                      &lt;td&gt;Field Name&lt;/td&gt;
+                      &lt;td&gt;Type&lt;/td&gt;
+                      &lt;td&gt;Length&lt;/td&gt;
+                      &lt;td&gt;Açıklama&lt;/td&gt;
+                      &lt;td&gt;Nullable&lt;/td&gt;
+                      &lt;td&gt;Identity&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/thead&gt;
+                  &lt;tbody&gt;
+
+                    &lt;xsl:for-each select="//Object[table_name/text() = $table]"&gt;
+                      &lt;tr&gt;
+                        &lt;td&gt;
+                          &lt;xsl:value-of select="name/text()" /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                          &lt;xsl:value-of select="type/text()" /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                          &lt;xsl:value-of select="length/text()" /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                          &lt;xsl:value-of select="description/text()" /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                          &lt;xsl:value-of select="nullable/text()" /&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                          &lt;xsl:value-of select="identity/text()" /&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/xsl:for-each&gt;
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+              &lt;/div&gt;
+
+            &lt;/xsl:if&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/div&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;--&gt;</value>
+  </data>
 </root>
